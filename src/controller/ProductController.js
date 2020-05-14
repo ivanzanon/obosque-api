@@ -1,3 +1,11 @@
+/**
+ * 
+ * @author Ivan Zanon
+ * 
+ * @description Controller that manages Product Model
+ * 
+ */
+
 const Sequelize = require("sequelize");
 
 const productModel = require('../model/ProductModel');

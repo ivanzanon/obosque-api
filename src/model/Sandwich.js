@@ -2,7 +2,7 @@
  * 
  * @author Ivan Zanon
  * 
- * @description Model of Products - for the control of products used to make a sandwich
+ * @description Model of Sandwich - store the different sandwiches to offer
  * 
  */
 
@@ -10,21 +10,25 @@ const Sequelize = require('sequelize');
 const Model = Sequelize.Model;
 const sequelize = new Sequelize('postgres://postgres:zanon@localhost:5431/postgres');
 
-class Produto extends Model {};
+class Sandwich extends Model {};
 
-Produto.init({
-    descricao: {
+Sandwich.init({
+    nome: {
         type: Sequelize.STRING,
         allownull: false,
     }, 
-    unidade: {
+    descricao: {
         type: Sequelize.STRING,
+        allowNull: false,
+    },
+    valor: {
+        type: Sequelize.FLOAT,
         allownull: false,
     }
 }, {sequelize});
 
-Produto.sync().then(() => {
-    console.log('Tabela de Produtos sincronizada e OK!');
+Sandwich.sync().then(() => {
+    console.log('Tabela de Sanduíches sincronizada e OK!');
 });
 
-module.exports = Produto;
+module.exports = Sandwich;
