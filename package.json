@@ -5,13 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "sqlize-init": "sequelize init",
+    "sqlize-migrate": "sequelize db:migrate",
+    "sqlize-seed-gen": "sequelize seed:generate --name Dish",
+    "sqlize-seed": "sequelize db:seed:all"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "pg": "^8.0.3",
     "pg-hstore": "^2.3.3",
@@ -19,6 +24,7 @@
     "sequelize": "^5.21.7"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.3",
+    "sequelize-cli": "^5.5.1"
   }
 }

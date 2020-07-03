@@ -2,13 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const Sequelize = require('sequelize');
 const requireDir = require('require-dir');
+require('path');
 
 //Iniciando App
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-const sequelize = new Sequelize('postgres://postgres:zanon@localhost:5431/postgres');
+const sequelize = new Sequelize('postgres://postgres:Zanon@9853@localhost:5432/postgres');
 
 sequelize
   .authenticate()

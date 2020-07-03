@@ -2,47 +2,48 @@
  * 
  * @author Ivan Zanon
  * 
- * @description Controller that manages Product Model
+ * @description Controller that manages Dish Model
  * 
  */
 
 const Sequelize = require("sequelize");
 
-const productModel = require('../model/ProductModel');
+const models = require('../database/models');
+const dishModel = models.Dish;
 
 module.exports = {
     async index(req, res) {
-        const products = await productModel.findAll();
+        const dishes = await dishModel.findAll();
 
-        return res.json(products);
+        return res.json(dishes);
     },
 
     async show (req, res) {
-        const product = await productModel.findByPk(req.params.id);
+        const dish = await dishModel.findByPk(req.params.id);
 
-        return res.json(product);
+        return res.json(dish);
     },
 
     async store(req, res) {
-        const product = await productModel.create(req.body);
+        const dish = await dishModel.create(req.body);
 
-        return res.json(product);
+        return res.json(dish);
     },
 
     async update(req, res) {
-        const product = await productModel.update(req.body, 
+        const dish = await dishModel.update(req.body, 
             {where:
                 {
                     id : req.params.id
                 }
             }
-        );
+            );
 
-        return res.json(product);
+        return res.json(dish);
     },
 
     async destroy(req, res) {
-        await productModel.destroy(
+        await dishModel.destroy(
             {where:
                 {
                     id : req.params.id

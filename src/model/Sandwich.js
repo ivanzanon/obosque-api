@@ -8,7 +8,7 @@
 
 const Sequelize = require('sequelize');
 const Model = Sequelize.Model;
-const sequelize = new Sequelize('postgres://postgres:zanon@localhost:5431/postgres');
+const sequelize = new Sequelize('postgres://postgres:Zanon@9853@localhost:5432/postgres');
 
 class Sandwich extends Model {};
 
